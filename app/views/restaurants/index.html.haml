@@ -10,10 +10,13 @@
               = review.thoughts
               = time_ago_in_words(review.created_at)
               -# = "#{review.endorsements.length} endorsements"
-              %p= pluralize review.endorsements.count, 'endorsement'
-              = link_to "Endorse Review", review_endorsements_path(review), method: :post
+              -# %p= pluralize review.endorsements.count, 'endorsement'
+              -# = link_to "Endorse Review", review_endorsements_path(review), method: :post
               %strong= review.rating
               \/5
+              = link_to "Endorse Review", review_endorsements_path(review), class: 'endorsements-link'
+              %span.endorsements_count= review.endorsements.count
+              = 'endorsement'.pluralize review.endorsements.count
               - if review.user == current_user
                 %p
                   = link_to "Delete review", review_path(restaurant,review), method: :delete
