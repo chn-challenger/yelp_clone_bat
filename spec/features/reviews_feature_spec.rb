@@ -99,10 +99,10 @@ feature 'reviews' do
       visit '/restaurants'
       click_link 'Review KFC'
       fill_in "Thoughts", with: "yuck"
-      select '1', from: 'Rating'
+      select '2', from: 'Rating'
       click_button 'Leave review'
       expect(current_path).to eq('/restaurants')
-      expect(page).to have_content('Average rating: 2')
+      expect(page).to have_content('Average rating: 2.5')
     end
   end
 

@@ -15,14 +15,7 @@ class Restaurant < ActiveRecord::Base
   end
 
   def average_rating
-    #return "N/A" if self.reviews.length == 0
-    return "N/A" if !self.reviews
-    sum_of_reviews = 0
-    self.reviews.each do |review|
-      sum_of_reviews += review.rating
-    end
-    return sum_of_reviews / self.reviews.length
+    return "N/A" if reviews.length == 0
+    reviews.inject(0){|r,x| r + x.rating} / reviews.length.to_f
   end
 end
-
-# restaurant.user_review_on_restaurant(user)
