@@ -24,7 +24,7 @@ describe Restaurant, type: :model do
     it 'returns the rating of a review when there is 1 review' do
       restaurant = Restaurant.create(name: 'The Ivy')
       restaurant.reviews.create(rating: 4)
-      expect(restaurant.average_rating).to eq 4
+      expect(restaurant.average_rating).to eq '★★★★☆'
     end
 
     it 'returns the rating of a review when there is 3 review' do
@@ -32,7 +32,7 @@ describe Restaurant, type: :model do
       restaurant.reviews.create(rating: 4)
       restaurant.reviews.create(rating: 5)
       restaurant.reviews.create(rating: 2)
-      expect(restaurant.average_rating).to eq 3.7
+      expect(restaurant.average_rating).to eq '★★★★☆'
     end
   end
 

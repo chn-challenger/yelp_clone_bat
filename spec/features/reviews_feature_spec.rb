@@ -102,7 +102,7 @@ feature 'reviews' do
       select '2', from: 'Rating'
       click_button 'Leave review'
       expect(current_path).to eq('/restaurants')
-      expect(page).to have_content('Average rating: 2.5')
+      expect(page).to have_content('Average rating: ★★★☆☆')
     end
   end
 
