@@ -8,7 +8,7 @@
           - restaurant.reviews.each do |review|
             %li
               = review.thoughts
-              = time_ago_in_words(review.created_at)
+              = "- reviewed #{time_ago_in_words(review.created_at)} ago "
               -# = "#{review.endorsements.length} endorsements"
               -# %p= pluralize review.endorsements.count, 'endorsement'
               -# = link_to "Endorse Review", review_endorsements_path(review), method: :post
