@@ -1,6 +1,6 @@
 module ReviewsHelper
-
-  def leave_review(thoughts, rating)
+  def leave_review(user, thoughts, rating)
+    sign_in(user)
     visit '/restaurants'
     click_link 'Review KFC'
     fill_in 'Thoughts', with: thoughts

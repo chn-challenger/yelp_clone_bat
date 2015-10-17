@@ -94,7 +94,7 @@ feature 'reviews' do
       select '3', from: 'Rating'
       click_button 'Leave review'
       click_link 'Sign out'
-      user2 = User.create(email: 'benny@example.com',password: '12344321',password_confirmation: '12344321')
+      user2 = create(:user, email: 'benny@email.com')
       sign_in(user2)
       visit '/restaurants'
       click_link 'Review KFC'
